@@ -6,7 +6,6 @@ import {
   useSearch,
 } from "@tanstack/react-router";
 import { useEffect } from "react";
-
 import { toast } from "sonner";
 import { Loader2, CheckCircle2, XCircle } from "lucide-react";
 import { useVerifyEmail } from "@/lib/mutation";
@@ -19,7 +18,7 @@ export const Route = createFileRoute("/Auth/email")({
 
 export default function VerifyEmail() {
   const darkMode = false;
-  const { token } = useSearch();
+  const  token  = useSearch({ from: Route.id });
   const verify = useVerifyEmail();
   const { setAuth } = authStore();
   const router = useRouter();
@@ -27,7 +26,7 @@ export default function VerifyEmail() {
   useEffect(() => {
     if (!token) return;
     verify
-      .mutateAsync(token)
+      .mutateAsync("token")
       .then((data) => {
         if (data?.user && data?.token)
           setAuth({ user: data.user, token: data.token });
