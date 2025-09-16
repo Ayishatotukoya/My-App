@@ -16,7 +16,7 @@ function Dashboard() {
 
   const handleLogout = () => {
     logout();
-    router.navigate({ to: "/" }); 
+    router.navigate({ to: "/Auth/signin" }); 
   };
   const [darkMode, setDarkMode] = useState(true);
 

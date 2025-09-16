@@ -7,7 +7,7 @@ export function useSignup() {
       email: string;
       password: string;
     }) => {
-      const { data } = await api.post("https://reqres.in/api/signup", body);
+      const { data } = await api.post("/signup", body);
        return data;
     },
   });
@@ -16,7 +16,7 @@ export function useSignup() {
 export function useSignin() {
   return useMutation({
     mutationFn: async (body: { email: string; password: string }) => {
-      const { data } = await api.post("https://reqres.in/api/signin", body);
+      const { data } = await api.post("/signin", body);
       return data;
     },
   });
@@ -25,7 +25,7 @@ export function useSignin() {
 export function useVerifyEmail() {
   return useMutation({
     mutationFn: async (token: string) => {
-      const { data } = await api.post("https://reqres.in/api/verify-email", { token });
+      const { data } = await api.post("/verify-email", { token });
       return data;
     },
   });
