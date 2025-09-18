@@ -16,9 +16,9 @@ const ThemeToggle = ({ darkMode, setDarkMode }: ThemeToggleProps) => {
         } p-2 rounded-full transition-colors duration-300`}
       >
         {darkMode ? (
-          <Sun className=" absolute top-5 right-4" />
+          <Sun className=" absolute top-4 right-0" />
         ) : (
-          <Moon className=" absolute top-5 right-4 " />
+          <Moon className=" absolute top-4 right-0 " />
         )}
       </button>
     </div>

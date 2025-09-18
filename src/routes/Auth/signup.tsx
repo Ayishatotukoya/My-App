@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -12,8 +14,6 @@ import {
   FormMessage,
   FormControl,
 } from "@/components/ui/form";
-import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
-import { useState } from "react";
 import { PasswordInput } from "@/components/passwordinput";
 import { type SignUpData, signUpSchema } from "@/components/schema";
 import { Loader2 } from "lucide-react";
@@ -28,6 +28,8 @@ export const Route = createFileRoute("/Auth/signup")({
 
 export function SignUp() {
   const [darkMode, setDarkMode] = useState(false);
+  const router = useRouter();
+
   const form = useForm<SignUpData>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
@@ -40,11 +42,10 @@ export function SignUp() {
   });
 
   const signup = useSignup();
-  const router = useRouter();
 
-  const onSubmit = async (v: SignUpData) => {
+  const onSubmit = async (values: SignUpData) => {
     try {
-      await signup.mutateAsync(v);
+      await signup.mutateAsync(values);
       toast.success("Sign up successful! Verification link sent.");
       router.navigate({ to: "/Auth/signin" });
       form.reset();
@@ -55,161 +56,136 @@ export function SignUp() {
 
   return (
     <AuthLayout
-      title="Sign Up"
       darkMode={darkMode}
       setDarkMode={setDarkMode}
-      footer={
-        <>
-          <p className="text-center text-[14px]">or sign up with</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <img src="/Google.svg" alt="google" />
-            <img src="/Facebook.svg" alt="facebook" />
-          </div>
-          <span className="text-sm">
-            Already have an account?{" "}
-            <Link to="/Auth/signin" className="text-blue-600 font-semibold">
-              Sign In
-            </Link>
-          </span>
-        </>
-      }
+      heroImage="/headerphoto.jpg"
+      heroAlt="Fashion hero"
     >
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          {/* First Name */}
-          <FormField
-            control={form.control}
-            name="firstName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>First Name</FormLabel>
-                <FormControl>
-                  <Input
-                    className={cn(
-                      darkMode
-                        ? "border-gray-700 shadow-md shadow-neutral-900"
-                        : ""
-                    )}
-                    placeholder="Enter your first name"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {/* Last Name */}
-          <FormField
-            control={form.control}
-            name="lastName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Last Name</FormLabel>
-                <FormControl>
-                  <Input
-                    className={cn(
-                      darkMode
-                        ? "border-gray-700 shadow-md shadow-neutral-900"
-                        : ""
-                    )}
-                    placeholder="Enter your last name"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {/* Email */}
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    className={cn(
-                      darkMode
-                        ? "border-gray-700 shadow-md shadow-neutral-900"
-                        : ""
-                    )}
-                    placeholder="you@example.com"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {/* Password */}
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <PasswordInput
-                    placeholder="**********"
-                    darkMode={darkMode}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {/* Confirm Password */}
-          <FormField
-            control={form.control}
-            name="confirmPassword"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Confirm Password</FormLabel>
-                <FormControl>
-                  <PasswordInput
-                    placeholder="**********"
-                    darkMode={darkMode}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {/* Submit */}
-          <Button
-            disabled={signup.isPending}
-            type="submit"
-            className={cn(
-              "w-full",
-              darkMode
-                ? "bg-blue-500 hover:bg-blue-600 text-white"
-                : "bg-blue-600 hover:bg-blue-700 text-white"
-            )}
-          >
-            {signup.isPending ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Signing up…
-              </>
-            ) : (
-              "Sign Up"
-            )}
-          </Button>
-
-          {signup.isError && (
-            <p className="text-red-500 text-sm mt-2">
-              {signup.error?.message ?? "Sign up failed"}
-            </p>
+      <div className="max-w-md w-full mx-auto">
+        <h2 className="text-3xl font-bold mb-4 text-center">Sign up</h2>
+        <p
+          className={cn(
+            "text-sm text-center mb-6",
+            darkMode ? "text-slate-100" : "text-gray-600"
           )}
-        </form>
-      </Form>
+        >
+          Join us — discover new arrivals and enjoy quick checkout.
+        </p>
+
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <FormField
+                control={form.control}
+                name="firstName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>First name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="First name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="lastName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Last name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Last name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="you@example.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <PasswordInput placeholder="Create a password" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Confirm password</FormLabel>
+                  <FormControl>
+                    <PasswordInput placeholder="Confirm password" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <Button
+              disabled={signup.isPending}
+              type="submit"
+              className={cn(
+                "w-full font-bold text-white",
+                darkMode ? "bg-gray-600" : "bg-gray-800 "
+              )}
+            >
+              {signup.isPending ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Signing up…
+                </>
+              ) : (
+                "Sign up"
+              )}
+            </Button>
+
+            {signup.isError && (
+              <p className="text-red-500 text-sm mt-2">
+                {signup.error?.message ?? "Sign up failed"}
+              </p>
+            )}
+          </form>
+        </Form>
+
+        <div className="mt-4 text-center text-sm">
+          By creating an account you agree to our{" "}
+          <div className="text-blue-600 hover:underline">
+            Terms & Conditions
+          </div>
+          
+        </div>
+
+        <div className="mt-1 text-center text-sm">
+          <span >Already have an account? </span>
+          <Link to="/Auth/signin" className="text-blue-600 font-bold">
+            Sign in
+          </Link>
+        </div>
+      </div>
     </AuthLayout>
   );
 }
