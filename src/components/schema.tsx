@@ -38,3 +38,29 @@ export const signInSchema = z.object({
 });
 
 export type SignInData = z.infer<typeof signInSchema>;
+
+// forget-password schema
+export const forgotPasswordSchema = z.object({
+  email: emailField,
+}); 
+
+export type ForgotPasswordData = z.infer<typeof forgotPasswordSchema>;
+
+// reset password schema
+export const resetPasswordSchema = z
+  .object({
+    password: passwordField,
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    error: "Passwords don't match",
+    path: ["confirmPassword"],
+  });
+
+  export type ResetPasswordData =z.infer<typeof resetPasswordSchema>;
+
+  export const resendSchema = z.object({
+    email: emailField
+  });
+
+  export type ResendData = z.infer<typeof resendSchema>;

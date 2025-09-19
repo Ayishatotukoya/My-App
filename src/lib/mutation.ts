@@ -21,6 +21,23 @@ export function useSignin() {
     },
   });
 }
+export function useForgotPassword() {
+  return useMutation({
+    mutationFn: async (body:{email: string}) => {
+      const { data } = await api.post("/forgot-password", body);
+      return data;
+    },
+  });
+}
+
+export function useResetPassword() {
+  return useMutation({
+    mutationFn: async(body: { token: string; newPassword: string }) => {
+      const { data } = await api.post("/reset-password", body);
+      return data;
+    }   
+  })
+}
 
 export function useVerifyEmail() {
   return useMutation({
