@@ -173,9 +173,10 @@ export function SignUp() {
 
         <div className="mt-4 text-center text-sm">
           By creating an account you agree to our{" "}
-          <div className="text-blue-600 hover:underline">
+          <Link to="/Auth/terms" className="text-blue-600 hover:underline">
             Terms & Conditions
-          </div>
+          </Link>
+         
           
         </div>
 
