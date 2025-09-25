@@ -1,7 +1,7 @@
 
 "use client";
 
-import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { authStore } from "@/stores/authstore";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useState } from "react";
@@ -16,7 +16,7 @@ function Dashboard() {
 
   const handleLogout = () => {
     logout();
-    router.navigate({ to: "/Auth/signin" }); 
+    router.navigate({ to: "/admin/admin" }); 
   };
   const [darkMode, setDarkMode] = useState(true);
 
@@ -35,7 +35,7 @@ function Dashboard() {
       {/* Hero Section */}
       <div className="text-center max-w-lg">
         <h1 className="text-4xl font-extrabold tracking-tight mb-4">
-          Welcome {user?.firstName} {user?.lastName} to{" "}
+          Welcome to{" "}
           <span className="text-blue-600">MyApp</span>
         </h1>
         <p
@@ -53,7 +53,8 @@ function Dashboard() {
 
         {/* Buttons */}
         <div className="flex gap-4 justify-center">
-          <Button 
+          <Button
+            onClick={handleLogout}
             size="lg"
             className={cn(
               "px-8 text-white",
@@ -62,9 +63,7 @@ function Dashboard() {
                 : "bg-blue-600 hover:bg-blue-700"
             )}
           >
-            <Link to="/admin/admin" className="text-blue-600 hover:underline">
-                         Admin
-                        </Link>
+            Admin
           </Button>
         </div>
       </div>
