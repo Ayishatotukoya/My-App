@@ -1,7 +1,7 @@
 
 "use client";
 
-import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
 import { authStore } from "@/stores/authstore";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useState } from "react";
@@ -53,8 +53,7 @@ function Dashboard() {
 
         {/* Buttons */}
         <div className="flex gap-4 justify-center">
-          <Button
-            onClick={handleLogout}
+          <Button 
             size="lg"
             className={cn(
               "px-8 text-white",
@@ -63,7 +62,9 @@ function Dashboard() {
                 : "bg-blue-600 hover:bg-blue-700"
             )}
           >
-            Log out
+            <Link to="/admin/admin" className="text-blue-600 hover:underline">
+                         Admin
+                        </Link>
           </Button>
         </div>
       </div>
