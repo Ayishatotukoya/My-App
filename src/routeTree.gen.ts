@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as AppDashboardRouteImport } from './routes/app/dashboard'
+import { Route as AdminAdminRouteImport } from './routes/admin/admin'
 import { Route as AuthTermsRouteImport } from './routes/Auth/terms'
 import { Route as AuthSignupRouteImport } from './routes/Auth/signup'
 import { Route as AuthSigninRouteImport } from './routes/Auth/signin'
@@ -33,6 +34,11 @@ const AppIndexRoute = AppIndexRouteImport.update({
 const AppDashboardRoute = AppDashboardRouteImport.update({
   id: '/app/dashboard',
   path: '/app/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAdminRoute = AdminAdminRouteImport.update({
+  id: '/admin/admin',
+  path: '/admin/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthTermsRoute = AuthTermsRouteImport.update({
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/Auth/signin': typeof AuthSigninRoute
   '/Auth/signup': typeof AuthSignupRoute
   '/Auth/terms': typeof AuthTermsRoute
+  '/admin/admin': typeof AdminAdminRoute
   '/app/dashboard': typeof AppDashboardRoute
   '/app': typeof AppIndexRoute
 }
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/Auth/signin': typeof AuthSigninRoute
   '/Auth/signup': typeof AuthSignupRoute
   '/Auth/terms': typeof AuthTermsRoute
+  '/admin/admin': typeof AdminAdminRoute
   '/app/dashboard': typeof AppDashboardRoute
   '/app': typeof AppIndexRoute
 }
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/Auth/signin': typeof AuthSigninRoute
   '/Auth/signup': typeof AuthSignupRoute
   '/Auth/terms': typeof AuthTermsRoute
+  '/admin/admin': typeof AdminAdminRoute
   '/app/dashboard': typeof AppDashboardRoute
   '/app/': typeof AppIndexRoute
 }
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/Auth/signin'
     | '/Auth/signup'
     | '/Auth/terms'
+    | '/admin/admin'
     | '/app/dashboard'
     | '/app'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/Auth/signin'
     | '/Auth/signup'
     | '/Auth/terms'
+    | '/admin/admin'
     | '/app/dashboard'
     | '/app'
   id:
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/Auth/signin'
     | '/Auth/signup'
     | '/Auth/terms'
+    | '/admin/admin'
     | '/app/dashboard'
     | '/app/'
   fileRoutesById: FileRoutesById
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   AuthSigninRoute: typeof AuthSigninRoute
   AuthSignupRoute: typeof AuthSignupRoute
   AuthTermsRoute: typeof AuthTermsRoute
+  AdminAdminRoute: typeof AdminAdminRoute
   AppDashboardRoute: typeof AppDashboardRoute
   AppIndexRoute: typeof AppIndexRoute
 }
@@ -181,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/app/dashboard'
       fullPath: '/app/dashboard'
       preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/admin': {
+      id: '/admin/admin'
+      path: '/admin/admin'
+      fullPath: '/admin/admin'
+      preLoaderRoute: typeof AdminAdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/Auth/terms': {
@@ -244,6 +264,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthSigninRoute: AuthSigninRoute,
   AuthSignupRoute: AuthSignupRoute,
   AuthTermsRoute: AuthTermsRoute,
+  AdminAdminRoute: AdminAdminRoute,
   AppDashboardRoute: AppDashboardRoute,
   AppIndexRoute: AppIndexRoute,
 }

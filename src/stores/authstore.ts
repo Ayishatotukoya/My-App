@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+
 type User = {
   id: string;
   firstName: string;
@@ -19,11 +20,19 @@ type AuthState = {
   logout: () => void;
 };
 
+const dummyUser = {
+  id: "1",
+  firstName: "Demo",
+  lastName: "Admin",
+  email: "demo@admin.com",
+  role: "admin",
+};
+
 export const authStore = create<AuthState>()(
   persist(
     (set) => ({
-      user: null,
-      token: null,
+      user: dummyUser, // << pretend we're logged in
+      token: "fake-token", // << dummy token
       loading: false,
       error: null,
       setAuth: ({ user, token }) => set({ user, token, error: null }),
@@ -34,3 +43,21 @@ export const authStore = create<AuthState>()(
     { name: "auth-state" }
   )
 );
+
+
+
+// export const authStore = create<AuthState>()(
+//   persist(
+//     (set) => ({
+//       user: null,
+//       token: null,
+//       loading: false,
+//       error: null,
+//       setAuth: ({ user, token }) => set({ user, token, error: null }),
+//       setLoading: (v) => set({ loading: v }),
+//       setError: (v) => set({ error: v }),
+//       logout: () => set({ user: null, token: null, error: null }),
+//     }),
+//     { name: "auth-state" }
+//   )
+// );

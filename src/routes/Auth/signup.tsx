@@ -38,6 +38,7 @@ export function SignUp() {
       email: "",
       password: "",
       confirmPassword: "",
+      terms: false,
     },
   });
 
@@ -45,7 +46,16 @@ export function SignUp() {
 
   const onSubmit = async (values: SignUpData) => {
     try {
-      await signup.mutateAsync(values);
+
+      const payload = {
+         firstName: values.firstName,
+         lastName: values.lastName,
+         email: values.email,
+         password: values.password,
+       };
+
+
+      await signup.mutateAsync(payload);
       toast.success("Sign up successful! Verification link sent.");
       router.navigate({ to: "/Auth/signin" });
       form.reset();
@@ -146,6 +156,36 @@ export function SignUp() {
               )}
             />
 
+            {/* Terms checkbox */}
+            <FormField
+              control={form.control}
+              name="terms"
+              render={({ field }) => (
+                <FormItem className="flex items-start gap-2">
+                  <FormControl>
+                    <input
+                      id="terms"
+                      type="checkbox"
+                      checked={field.value}
+                      onChange={(e) => field.onChange(e.target.checked)}
+                      className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    />
+                  </FormControl>
+
+                  <div className="text-sm">
+                    <label htmlFor="terms" className="select-none">
+                      I agree to the{" "}
+                      <Link to="/Auth/terms" className="text-blue-600 underline">
+                        Terms &amp; Conditions
+                      </Link>
+                      .
+                    </label>
+                    <FormMessage />
+                  </div>
+                </FormItem>
+              )}
+            />
+
             <Button
               disabled={signup.isPending}
               type="submit"
@@ -176,12 +216,10 @@ export function SignUp() {
           <Link to="/Auth/terms" className="text-blue-600 hover:underline">
             Terms & Conditions
           </Link>
-         
-          
         </div>
 
         <div className="mt-1 text-center text-sm">
-          <span >Already have an account? </span>
+          <span>Already have an account? </span>
           <Link to="/Auth/signin" className="text-blue-600 font-bold">
             Sign in
           </Link>

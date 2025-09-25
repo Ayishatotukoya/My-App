@@ -23,6 +23,8 @@ export const signUpSchema = z
     email:emailField,
     password: passwordField,
     confirmPassword: z.string(),
+    terms:z.boolean().refine((val) => val === true,
+     {error: "You must accept the terms and conditions"}),
   })
   .refine((data) => data.password === data.confirmPassword, {
     error: "Passwords don't match",
