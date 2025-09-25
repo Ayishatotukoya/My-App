@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/app/")({ component: Dashboard });
 
 function Dashboard() {
-  const { user, logout } = authStore();
+  const { logout } = authStore();
   const router = useRouter();
 
   const handleLogout = () => {
