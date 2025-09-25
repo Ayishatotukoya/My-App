@@ -3,17 +3,17 @@
 
 import { useState } from "react";
 // import { Link, Outlet } from "@tanstack/react-router";
-import { Menu } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { authStore } from "@/stores/authstore";
 import { Outlet } from "@tanstack/react-router";
+import { Button } from "../ui/button";
 
 export default function AdminLayout({
   children,
 }: {
   children?: React.ReactNode;
 }) {
-  const { user } = authStore();
+ 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -45,17 +45,18 @@ export default function AdminLayout({
           >
             <Menu />
           </button>
-          <div className="flex-1 text-center">Search Bar (later)</div>
+          <div className="flex-1 flex items-center gap-2">
+            <Search/>
+            Search Bar</div>
           <div className="ml-auto">
-            {user?.firstName} ▼
+            <Button className="bg-slate-800" > Admin ▼</Button>
+
             {/* Here you can add dropdown for Profile/Logout */}
           </div>
         </header>
 
         {/* Page content */}
-        <main className="flex-1 p-4 bg-gray-50">{children || <Outlet />}
-        
-        </main>
+        <main className="flex-1 p-4 bg-gray-50">{children || <Outlet />}</main>
 
         {/* Footer */}
         <footer className="p-4 text-center text-sm bg-white border-t">
