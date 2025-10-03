@@ -546,7 +546,8 @@ export default function ProductsPage() {
                       Delete
                     </button>
                     <Link
-                      to={`/admin/products/${p.id}`}
+                     //  to={`/admin/products/${p.id}`}
+                     to="/"
                       className="px-3 py-1 border rounded text-sm ml-auto"
                     >
                       View

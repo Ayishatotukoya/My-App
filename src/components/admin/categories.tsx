@@ -183,7 +183,8 @@ export default function CategoriesPage() {
                   </button>
 
                   <Link
-                    to={`/admin/categories/${c.id}`}
+                    // to={`/admin/categories/${c.id}`}
+                    to="/"
                     className="px-3 py-1 border rounded text-sm"
                   >
                     View

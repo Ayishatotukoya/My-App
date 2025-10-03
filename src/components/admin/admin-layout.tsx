@@ -1,114 +1,3 @@
-// "use client";
-
-// import { useState } from "react";
-// import { Bell, ChevronDown, LayoutDashboard, List, Menu, Search, Settings, ShoppingCart } from "lucide-react";
-// import { cn } from "@/lib/utils";
-// import { Link, Outlet } from "@tanstack/react-router";
-// import { Button } from "../ui/button";
-
-// export default function AdminLayout({
-//   children,
-// }: {
-//   children?: React.ReactNode;
-// }) {
- 
-//   const [sidebarOpen, setSidebarOpen] = useState(false);
- 
-//   return (
-//     <div className="flex min-h-screen">
-//       {/* Sidebar */}
-//       <aside
-//         className={cn(
-//           "fixed inset-y-0 left-0 bg-gray-50 text-slate-950 w-64 p-4 transform transition-transform",
-//           sidebarOpen ? "translate-x-0" : "-translate-x-full",
-//           "md:translate-x-0"
-//         )}
-//       >
-//         <div className="hidden sm:flex items-center gap-3">
-//           <div className="h-8 w-8 shrink-0 rounded-full bg-slate-200" />
-//           <Button className="bg-slate-500"> Admin ▼</Button>
-//         </div>
-//         <div className="flex flex-col p-4 space-y-2">
-//           <div className="mb-4 flex items-center gap-3 p-3 rounded bg-slate-400 text-white font-bold">
-//             <LayoutDashboard />
-//             <Link to="/admin/admin">Dashboard</Link>
-//           </div>
-//           <div className="mb-4 flex items-center gap-3 p-3 rounded hover:bg-slate-400 hover:text-white font-bold">
-//             <ShoppingCart />
-//             <Link to="/admin/product">Product</Link>
-//           </div>
-//           <div className="mb-4 flex items-center gap-3 p-3 rounded hover:bg-slate-400 hover:text-white font-bold">
-//             <List />
-//             <Link to="/admin/orders">Order</Link>
-//           </div>
-//           <div className="mb-4 flex items-center gap-3 p-3 rounded hover:bg-slate-400 hover:text-white font-bold">
-//             <Settings />
-//             <Link to="/admin/orders">Settings</Link>
-//           </div>
-//           <div className="mb-4 flex items-center gap-3 p-3 rounded hover:bg-slate-400 hover:text-white font-bold">
-//             <Link to="/admin/categories">Categories</Link>
-//             <ChevronDown />
-//           </div>
-//         </div>
-//       </aside>
-
-//       {/* Main content */}
-//       <div className="flex-1 flex flex-col ml-0 md:ml-64">
-//         {/* TopNav */}
-
-//         <header className="flex items-center justify-between px-4 py-2 border-b bg-white">
-//           <div className="flex items-center gap-4">
-//             <button
-//               className="md:hidden"
-//               onClick={() => setSidebarOpen(!sidebarOpen)}
-//             >
-//               <Menu />
-//             </button>
-
-//             {/* logo */}
-//             <div className="flex items-center gap-3">
-//               <div className="h-8 w-8 rounded-md bg-slate-200 flex items-center justify-center font-bold">
-//                 <img src="./logo512.png" alt="logo" />
-//               </div>
-//             </div>
-//           </div>
-
-//           <div className="flex items-center gap-4">
-//             <div className="relative hidden sm:block">
-//               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-//               <input
-//                 type="search"
-//                 placeholder="Search products, orders..."
-//                 className="w-64 rounded-md border px-10 py-2 text-sm focus:outline-none focus:ring"
-//               />
-//             </div>
-
-//             <button
-//               className="rounded-md p-2 hover:bg-slate-100"
-//               aria-label="Notifications"
-//               title="Notifications"
-//             >
-//               <Bell className="h-5 w-5" />
-//             </button>
-//           </div>
-//         </header>
-
-//         {/* Page content */}
-//         <main className="flex-1 p-4 bg-slate-100">
-//           {children || <Outlet />}
-//         </main>
-
-//         {/* Footer */}
-//         <footer className="p-4 text-center text-sm bg-white border-t">
-//           &copy; 2025 My E-commerce Admin. About • Features • Contact
-//         </footer>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-
 "use client";
 
 import { useEffect, useState, useRef } from "react";
@@ -301,7 +190,7 @@ export default function AdminLayout({
           {adminOpen && (
             <div className="mt-2 flex flex-col gap-1">
               <Link
-                to="/admin/account"
+                to="/"
                 onClick={handleNavClick}
                 className="px-2 py-2 text-sm rounded hover:bg-slate-50"
               >
@@ -379,7 +268,7 @@ export default function AdminLayout({
 
             <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
           </div>
-          
+
         </header>
 
         {/* Page content */}
