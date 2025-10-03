@@ -12,6 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as AppDashboardRouteImport } from './routes/app/dashboard'
+import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
+import { Route as AdminProfileRouteImport } from './routes/admin/profile'
+import { Route as AdminProductRouteImport } from './routes/admin/product'
+import { Route as AdminOrdersRouteImport } from './routes/admin/orders'
+import { Route as AdminDashboardRouteImport } from './routes/admin/dashboard'
+import { Route as AdminCategoriesRouteImport } from './routes/admin/categories'
 import { Route as AdminAdminRouteImport } from './routes/admin/admin'
 import { Route as AuthTermsRouteImport } from './routes/Auth/terms'
 import { Route as AuthSignupRouteImport } from './routes/Auth/signup'
@@ -34,6 +40,36 @@ const AppIndexRoute = AppIndexRouteImport.update({
 const AppDashboardRoute = AppDashboardRouteImport.update({
   id: '/app/dashboard',
   path: '/app/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/admin/settings',
+  path: '/admin/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminProfileRoute = AdminProfileRouteImport.update({
+  id: '/admin/profile',
+  path: '/admin/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminProductRoute = AdminProductRouteImport.update({
+  id: '/admin/product',
+  path: '/admin/product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminOrdersRoute = AdminOrdersRouteImport.update({
+  id: '/admin/orders',
+  path: '/admin/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCategoriesRoute = AdminCategoriesRouteImport.update({
+  id: '/admin/categories',
+  path: '/admin/categories',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminAdminRoute = AdminAdminRouteImport.update({
@@ -87,6 +123,12 @@ export interface FileRoutesByFullPath {
   '/Auth/signup': typeof AuthSignupRoute
   '/Auth/terms': typeof AuthTermsRoute
   '/admin/admin': typeof AdminAdminRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/product': typeof AdminProductRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/app/dashboard': typeof AppDashboardRoute
   '/app': typeof AppIndexRoute
 }
@@ -100,6 +142,12 @@ export interface FileRoutesByTo {
   '/Auth/signup': typeof AuthSignupRoute
   '/Auth/terms': typeof AuthTermsRoute
   '/admin/admin': typeof AdminAdminRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/product': typeof AdminProductRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/app/dashboard': typeof AppDashboardRoute
   '/app': typeof AppIndexRoute
 }
@@ -114,6 +162,12 @@ export interface FileRoutesById {
   '/Auth/signup': typeof AuthSignupRoute
   '/Auth/terms': typeof AuthTermsRoute
   '/admin/admin': typeof AdminAdminRoute
+  '/admin/categories': typeof AdminCategoriesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/orders': typeof AdminOrdersRoute
+  '/admin/product': typeof AdminProductRoute
+  '/admin/profile': typeof AdminProfileRoute
+  '/admin/settings': typeof AdminSettingsRoute
   '/app/dashboard': typeof AppDashboardRoute
   '/app/': typeof AppIndexRoute
 }
@@ -129,6 +183,12 @@ export interface FileRouteTypes {
     | '/Auth/signup'
     | '/Auth/terms'
     | '/admin/admin'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/orders'
+    | '/admin/product'
+    | '/admin/profile'
+    | '/admin/settings'
     | '/app/dashboard'
     | '/app'
   fileRoutesByTo: FileRoutesByTo
@@ -142,6 +202,12 @@ export interface FileRouteTypes {
     | '/Auth/signup'
     | '/Auth/terms'
     | '/admin/admin'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/orders'
+    | '/admin/product'
+    | '/admin/profile'
+    | '/admin/settings'
     | '/app/dashboard'
     | '/app'
   id:
@@ -155,6 +221,12 @@ export interface FileRouteTypes {
     | '/Auth/signup'
     | '/Auth/terms'
     | '/admin/admin'
+    | '/admin/categories'
+    | '/admin/dashboard'
+    | '/admin/orders'
+    | '/admin/product'
+    | '/admin/profile'
+    | '/admin/settings'
     | '/app/dashboard'
     | '/app/'
   fileRoutesById: FileRoutesById
@@ -169,6 +241,12 @@ export interface RootRouteChildren {
   AuthSignupRoute: typeof AuthSignupRoute
   AuthTermsRoute: typeof AuthTermsRoute
   AdminAdminRoute: typeof AdminAdminRoute
+  AdminCategoriesRoute: typeof AdminCategoriesRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminOrdersRoute: typeof AdminOrdersRoute
+  AdminProductRoute: typeof AdminProductRoute
+  AdminProfileRoute: typeof AdminProfileRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
   AppDashboardRoute: typeof AppDashboardRoute
   AppIndexRoute: typeof AppIndexRoute
 }
@@ -194,6 +272,48 @@ declare module '@tanstack/react-router' {
       path: '/app/dashboard'
       fullPath: '/app/dashboard'
       preLoaderRoute: typeof AppDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/admin/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/profile': {
+      id: '/admin/profile'
+      path: '/admin/profile'
+      fullPath: '/admin/profile'
+      preLoaderRoute: typeof AdminProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/product': {
+      id: '/admin/product'
+      path: '/admin/product'
+      fullPath: '/admin/product'
+      preLoaderRoute: typeof AdminProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/orders': {
+      id: '/admin/orders'
+      path: '/admin/orders'
+      fullPath: '/admin/orders'
+      preLoaderRoute: typeof AdminOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/categories': {
+      id: '/admin/categories'
+      path: '/admin/categories'
+      fullPath: '/admin/categories'
+      preLoaderRoute: typeof AdminCategoriesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/admin': {
@@ -265,6 +385,12 @@ const rootRouteChildren: RootRouteChildren = {
   AuthSignupRoute: AuthSignupRoute,
   AuthTermsRoute: AuthTermsRoute,
   AdminAdminRoute: AdminAdminRoute,
+  AdminCategoriesRoute: AdminCategoriesRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminOrdersRoute: AdminOrdersRoute,
+  AdminProductRoute: AdminProductRoute,
+  AdminProfileRoute: AdminProfileRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
   AppDashboardRoute: AppDashboardRoute,
   AppIndexRoute: AppIndexRoute,
 }

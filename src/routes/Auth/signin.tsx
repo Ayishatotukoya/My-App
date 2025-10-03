@@ -99,9 +99,6 @@ export function SignIn() {
             <Link to="/Auth/forgot-password" className="text-blue-600 hover:underline">
               Forgot password?
             </Link>
-            <Link to="/admin/admin" className="text-blue-600 hover:underline">
-              Reset password?
-            </Link>
           </div>
 
           <Button

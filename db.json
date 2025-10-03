@@ -1,0 +1,371 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Women",
+      "slug": "women"
+    },
+    {
+      "id": "2",
+      "name": "Men",
+      "slug": "men"
+    },
+    {
+      "id": "3",
+      "name": "Kids",
+      "slug": "kids"
+    },
+    {
+      "id": "4",
+      "name": "Accessories",
+      "slug": "accessories"
+    },
+    {
+      "id": "5",
+      "name": "Shoes",
+      "slug": "shoes"
+    },
+    {
+      "id": "6",
+      "name": "bags",
+      "slug": "bags"
+    }
+  ],
+  "brands": [
+    {
+      "id": "1",
+      "name": "Lumi\u00e8re"
+    },
+    {
+      "id": "2",
+      "name": "Northfield"
+    },
+    {
+      "id": "3",
+      "name": "Coastline"
+    },
+    {
+      "id": "4",
+      "name": "Studio & Co"
+    }
+  ],
+  "products": [
+    {
+      "id": "1001",
+      "sku": "SKU-1001",
+      "title": "Midi Wrap Dress",
+      "description": "Sample description for Midi Wrap Dress. High quality, comfortable and stylish.",
+      "price": 189.26,
+      "compareAtPrice": 204.26,
+      "categoryId": 1,
+      "brandId": 1,
+      "images": [
+        "https://picsum.photos/seed/SKU-1001-midi-wrap-dress-0/600/600",
+        "https://picsum.photos/seed/SKU-1001-midi-wrap-dress-1/600/600"
+      ],
+      "colors": ["white", "sky", "brown"],
+      "sizes": ["32", "XS"],
+      "tags": ["best-seller"],
+      "stock": 55,
+      "rating": 3.8,
+      "createdAt": "2025-06-04T00:00:00Z"
+    },
+    {
+      "id": "1002",
+      "sku": "SKU-1002",
+      "title": "Oversized Knit Sweater",
+      "description": "Sample description for Oversized Knit Sweater. High quality, comfortable and stylish.",
+      "price": 183.26,
+      "compareAtPrice": null,
+      "categoryId": 1,
+      "brandId": 2,
+      "images": [
+        "https://picsum.photos/seed/SKU-1002-oversized-knit-sweater-0/600/600",
+        "https://picsum.photos/seed/SKU-1002-oversized-knit-sweater-1/600/600",
+        "https://picsum.photos/seed/SKU-1002-oversized-knit-sweater-2/600/600"
+      ],
+      "colors": ["olive", "charcoal"],
+      "sizes": ["XS", "M", "30", "L"],
+      "tags": ["outerwear", "sale"],
+      "stock": 55,
+      "rating": 4.9,
+      "createdAt": "2025-03-28T00:00:00Z"
+    },
+    {
+      "id": "1003",
+      "sku": "SKU-1003",
+      "title": "High-Waist Wide-Leg Trousers",
+      "description": "Sample description for High-Waist Wide-Leg Trousers. High quality, comfortable and stylish.",
+      "price": 104.28,
+      "compareAtPrice": 124.28,
+      "categoryId": 1,
+      "brandId": 1,
+      "images": [
+        "https://picsum.photos/seed/SKU-1003-high-waist-wide-leg-trousers-0/600/600",
+        "https://picsum.photos/seed/SKU-1003-high-waist-wide-leg-trousers-1/600/600",
+        "https://picsum.photos/seed/SKU-1003-high-waist-wide-leg-trousers-2/600/600"
+      ],
+      "colors": ["blush", "black", "charcoal"],
+      "sizes": ["32", "S"],
+      "tags": ["outerwear", "trend", "summer"],
+      "stock": 147,
+      "rating": 3.8,
+      "createdAt": "2025-01-18T00:00:00Z"
+    },
+    {
+      "id": "1004",
+      "sku": "SKU-1004",
+      "title": "Silk Blouse",
+      "description": "Sample description for Silk Blouse. High quality, comfortable and stylish.",
+      "price": 196.67,
+      "compareAtPrice": null,
+      "categoryId": 1,
+      "brandId": 2,
+      "images": ["https://picsum.photos/seed/SKU-1004-silk-blouse-0/600/600"],
+      "colors": ["white"],
+      "sizes": ["XL", "34", "30", "M", "S"],
+      "tags": ["summer", "cozy"],
+      "stock": 171,
+      "rating": 3.9,
+      "createdAt": "2025-06-24T00:00:00Z"
+    },
+    {
+      "id": "1005",
+      "sku": "SKU-1005",
+      "title": "Denim Jacket",
+      "description": "Sample description for Denim Jacket. High quality, comfortable and stylish.",
+      "price": 140.52,
+      "compareAtPrice": 170.52,
+      "categoryId": 1,
+      "brandId": 2,
+      "images": ["https://picsum.photos/seed/SKU-1005-denim-jacket-0/600/600"],
+      "colors": ["blush", "sky"],
+      "sizes": ["30", "XS", "S"],
+      "tags": ["summer"],
+      "stock": 102,
+      "rating": 3.9,
+      "createdAt": "2025-02-24T00:00:00Z"
+    },
+    {
+      "id": "1006",
+      "sku": "SKU-1006",
+      "title": "Midi Skirt",
+      "description": "Sample description for Midi Skirt. High quality, comfortable and stylish.",
+      "price": 64.97,
+      "compareAtPrice": 94.97,
+      "categoryId": 5,
+      "brandId": 3,
+      "images": [
+        "https://picsum.photos/seed/SKU-1006-midi-skirt-0/600/600",
+        "https://picsum.photos/seed/SKU-1006-midi-skirt-1/600/600",
+        "https://picsum.photos/seed/SKU-1006-midi-skirt-2/600/600"
+      ],
+      "colors": ["blush"],
+      "sizes": ["7", "10", "8"],
+      "tags": ["trend", "luxury", "gifts"],
+      "stock": 92,
+      "rating": 3.8,
+      "createdAt": "2025-02-05T00:00:00Z"
+    },
+    {
+      "id": "1007",
+      "sku": "SKU-1007",
+      "title": "Pleated Maxi Dress",
+      "description": "Sample description for Pleated Maxi Dress. High quality, comfortable and stylish.",
+      "price": 36.36,
+      "compareAtPrice": 46.36,
+      "categoryId": 5,
+      "brandId": 4,
+      "images": [
+        "https://picsum.photos/seed/SKU-1007-pleated-maxi-dress-0/600/600",
+        "https://picsum.photos/seed/SKU-1007-pleated-maxi-dress-1/600/600"
+      ],
+      "colors": ["sky"],
+      "sizes": ["11", "9", "6"],
+      "tags": ["luxury", "trend"],
+      "stock": 119,
+      "rating": 4.3,
+      "createdAt": "2025-05-22T00:00:00Z"
+    },
+    {
+      "id": "1008",
+      "sku": "SKU-1008",
+      "title": "Ribbed Tank Top",
+      "description": "Sample description for Ribbed Tank Top. High quality, comfortable and stylish.",
+      "price": 175.2,
+      "compareAtPrice": 195.2,
+      "categoryId": 1,
+      "brandId": 1,
+      "images": [
+        "https://picsum.photos/seed/SKU-1008-ribbed-tank-top-0/600/600",
+        "https://picsum.photos/seed/SKU-1008-ribbed-tank-top-1/600/600"
+      ],
+      "colors": ["ivory", "white", "blush"],
+      "sizes": ["M", "34", "XS", "30", "36"],
+      "tags": ["sale", "workwear", "best-seller"],
+      "stock": 160,
+      "rating": 3.9,
+      "createdAt": "2025-06-13T00:00:00Z"
+    },
+    {
+      "id": "1009",
+      "sku": "SKU-1009",
+      "title": "Tailored Blazer",
+      "description": "Sample description for Tailored Blazer. High quality, comfortable and stylish.",
+      "price": 50.92,
+      "compareAtPrice": null,
+      "categoryId": 5,
+      "brandId": 2,
+      "images": [
+        "https://picsum.photos/seed/SKU-1009-tailored-blazer-0/600/600"
+      ],
+      "colors": ["tan", "brown", "black"],
+      "sizes": ["9", "6", "10", "7"],
+      "tags": ["cozy", "new-arrival"],
+      "stock": 61,
+      "rating": 4.8,
+      "createdAt": "2025-01-21T00:00:00Z"
+    },
+    {
+      "id": "1010",
+      "sku": "SKU-1010",
+      "title": "Chiffon Blouse",
+      "description": "Sample description for Chiffon Blouse. High quality, comfortable and stylish.",
+      "price": 206.77,
+      "compareAtPrice": null,
+      "categoryId": 1,
+      "brandId": 4,
+      "images": [
+        "https://picsum.photos/seed/SKU-1010-chiffon-blouse-0/600/600"
+      ],
+      "colors": ["tan", "navy", "red"],
+      "sizes": ["36", "M", "34", "XL", "30"],
+      "tags": ["cozy", "workwear"],
+      "stock": 193,
+      "rating": 4.6,
+      "createdAt": "2025-02-21T00:00:00Z"
+    },
+    {
+      "id": "1011",
+      "sku": "SKU-1011",
+      "title": "Slim Chino Pants",
+      "description": "Sample description for Slim Chino Pants. High quality, comfortable and stylish.",
+      "price": 248.86,
+      "compareAtPrice": null,
+      "categoryId": 3,
+      "brandId": 4,
+      "images": [
+        "https://picsum.photos/seed/SKU-1011-slim-chino-pants-0/600/600",
+        "https://picsum.photos/seed/SKU-1011-slim-chino-pants-1/600/600",
+        "https://picsum.photos/seed/SKU-1011-slim-chino-pants-2/600/600"
+      ],
+      "colors": ["brown", "charcoal"],
+      "sizes": ["3T"],
+      "tags": ["best-seller"],
+      "stock": 86,
+      "rating": 3.5,
+      "createdAt": "2025-05-22T00:00:00Z"
+    },
+    {
+      "id": "1012",
+      "sku": "SKU-1012",
+      "title": "Oxford Shirt",
+      "description": "Sample description for Oxford Shirt. High quality, comfortable and stylish.",
+      "price": 16.69,
+      "compareAtPrice": null,
+      "categoryId": 2,
+      "brandId": 2,
+      "images": [
+        "https://picsum.photos/seed/SKU-1012-oxford-shirt-0/600/600",
+        "https://picsum.photos/seed/SKU-1012-oxford-shirt-1/600/600"
+      ],
+      "colors": ["olive"],
+      "sizes": ["XS", "30"],
+      "tags": ["workwear"],
+      "stock": 60,
+      "rating": 3.9,
+      "createdAt": "2025-05-05T00:00:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@example.com",
+      "name": "Admin User",
+      "role": "admin"
+    }
+  ],
+  "orders": [],
+  "filters": {
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL",
+      "30",
+      "32",
+      "34",
+      "36",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "2T",
+      "3T",
+      "4T"
+    ],
+    "colors": [
+      "black",
+      "white",
+      "navy",
+      "olive",
+      "blush",
+      "ivory",
+      "camel",
+      "charcoal",
+      "brown",
+      "yellow",
+      "sky",
+      "red",
+      "tan"
+    ],
+    "priceRanges": [
+      {
+        "label": "$0 - $25",
+        "min": 0,
+        "max": 25
+      },
+      {
+        "label": "$26 - $60",
+        "min": 26,
+        "max": 60
+      },
+      {
+        "label": "$61 - $120",
+        "min": 61,
+        "max": 120
+      },
+      {
+        "label": "$121 - $250",
+        "min": 121,
+        "max": 250
+      }
+    ],
+    "tags": [
+      "new-arrival",
+      "best-seller",
+      "sale",
+      "cozy",
+      "outerwear",
+      "summer",
+      "luxury",
+      "casual",
+      "workwear",
+      "trend",
+      "gifts"
+    ]
+  }
+}
