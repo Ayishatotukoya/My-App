@@ -11,12 +11,12 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/app/")({ component: Dashboard });
 
 function Dashboard() {
-  const { logout } = authStore();
+  const { user, logout } = authStore();
   const router = useRouter();
 
   const handleLogout = () => {
     logout();
-    router.navigate({ to: "/admin/admin" }); 
+    router.navigate({ to: "/Auth/signin" }); 
   };
   const [darkMode, setDarkMode] = useState(true);
 
@@ -35,7 +35,7 @@ function Dashboard() {
       {/* Hero Section */}
       <div className="text-center max-w-lg">
         <h1 className="text-4xl font-extrabold tracking-tight mb-4">
-          Welcome to{" "}
+          Welcome {user?.firstName} {user?.lastName} to{" "}
           <span className="text-blue-600">MyApp</span>
         </h1>
         <p
@@ -63,7 +63,7 @@ function Dashboard() {
                 : "bg-blue-600 hover:bg-blue-700"
             )}
           >
-            Admin
+            Log out
           </Button>
         </div>
       </div>

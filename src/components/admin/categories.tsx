@@ -184,7 +184,7 @@ export default function CategoriesPage() {
 
                   <Link
                     // to={`/admin/categories/${c.id}`}
-                    to="/"
+                    to="/admin/admin"
                     className="px-3 py-1 border rounded text-sm"
                   >
                     View

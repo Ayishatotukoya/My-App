@@ -34,7 +34,7 @@
   "brands": [
     {
       "id": "1",
-      "name": "Lumi\u00e8re"
+      "name": "Lumière"
     },
     {
       "id": "2",
@@ -63,9 +63,18 @@
         "https://picsum.photos/seed/SKU-1001-midi-wrap-dress-0/600/600",
         "https://picsum.photos/seed/SKU-1001-midi-wrap-dress-1/600/600"
       ],
-      "colors": ["white", "sky", "brown"],
-      "sizes": ["32", "XS"],
-      "tags": ["best-seller"],
+      "colors": [
+        "white",
+        "sky",
+        "brown"
+      ],
+      "sizes": [
+        "32",
+        "XS"
+      ],
+      "tags": [
+        "best-seller"
+      ],
       "stock": 55,
       "rating": 3.8,
       "createdAt": "2025-06-04T00:00:00Z"
@@ -84,9 +93,20 @@
         "https://picsum.photos/seed/SKU-1002-oversized-knit-sweater-1/600/600",
         "https://picsum.photos/seed/SKU-1002-oversized-knit-sweater-2/600/600"
       ],
-      "colors": ["olive", "charcoal"],
-      "sizes": ["XS", "M", "30", "L"],
-      "tags": ["outerwear", "sale"],
+      "colors": [
+        "olive",
+        "charcoal"
+      ],
+      "sizes": [
+        "XS",
+        "M",
+        "30",
+        "L"
+      ],
+      "tags": [
+        "outerwear",
+        "sale"
+      ],
       "stock": 55,
       "rating": 4.9,
       "createdAt": "2025-03-28T00:00:00Z"
@@ -105,9 +125,20 @@
         "https://picsum.photos/seed/SKU-1003-high-waist-wide-leg-trousers-1/600/600",
         "https://picsum.photos/seed/SKU-1003-high-waist-wide-leg-trousers-2/600/600"
       ],
-      "colors": ["blush", "black", "charcoal"],
-      "sizes": ["32", "S"],
-      "tags": ["outerwear", "trend", "summer"],
+      "colors": [
+        "blush",
+        "black",
+        "charcoal"
+      ],
+      "sizes": [
+        "32",
+        "S"
+      ],
+      "tags": [
+        "outerwear",
+        "trend",
+        "summer"
+      ],
       "stock": 147,
       "rating": 3.8,
       "createdAt": "2025-01-18T00:00:00Z"
@@ -121,10 +152,23 @@
       "compareAtPrice": null,
       "categoryId": 1,
       "brandId": 2,
-      "images": ["https://picsum.photos/seed/SKU-1004-silk-blouse-0/600/600"],
-      "colors": ["white"],
-      "sizes": ["XL", "34", "30", "M", "S"],
-      "tags": ["summer", "cozy"],
+      "images": [
+        "https://picsum.photos/seed/SKU-1004-silk-blouse-0/600/600"
+      ],
+      "colors": [
+        "white"
+      ],
+      "sizes": [
+        "XL",
+        "34",
+        "30",
+        "M",
+        "S"
+      ],
+      "tags": [
+        "summer",
+        "cozy"
+      ],
       "stock": 171,
       "rating": 3.9,
       "createdAt": "2025-06-24T00:00:00Z"
@@ -138,10 +182,21 @@
       "compareAtPrice": 170.52,
       "categoryId": 1,
       "brandId": 2,
-      "images": ["https://picsum.photos/seed/SKU-1005-denim-jacket-0/600/600"],
-      "colors": ["blush", "sky"],
-      "sizes": ["30", "XS", "S"],
-      "tags": ["summer"],
+      "images": [
+        "https://picsum.photos/seed/SKU-1005-denim-jacket-0/600/600"
+      ],
+      "colors": [
+        "blush",
+        "sky"
+      ],
+      "sizes": [
+        "30",
+        "XS",
+        "S"
+      ],
+      "tags": [
+        "summer"
+      ],
       "stock": 102,
       "rating": 3.9,
       "createdAt": "2025-02-24T00:00:00Z"
@@ -160,9 +215,19 @@
         "https://picsum.photos/seed/SKU-1006-midi-skirt-1/600/600",
         "https://picsum.photos/seed/SKU-1006-midi-skirt-2/600/600"
       ],
-      "colors": ["blush"],
-      "sizes": ["7", "10", "8"],
-      "tags": ["trend", "luxury", "gifts"],
+      "colors": [
+        "blush"
+      ],
+      "sizes": [
+        "7",
+        "10",
+        "8"
+      ],
+      "tags": [
+        "trend",
+        "luxury",
+        "gifts"
+      ],
       "stock": 92,
       "rating": 3.8,
       "createdAt": "2025-02-05T00:00:00Z"
@@ -180,9 +245,18 @@
         "https://picsum.photos/seed/SKU-1007-pleated-maxi-dress-0/600/600",
         "https://picsum.photos/seed/SKU-1007-pleated-maxi-dress-1/600/600"
       ],
-      "colors": ["sky"],
-      "sizes": ["11", "9", "6"],
-      "tags": ["luxury", "trend"],
+      "colors": [
+        "sky"
+      ],
+      "sizes": [
+        "11",
+        "9",
+        "6"
+      ],
+      "tags": [
+        "luxury",
+        "trend"
+      ],
       "stock": 119,
       "rating": 4.3,
       "createdAt": "2025-05-22T00:00:00Z"
@@ -200,9 +274,23 @@
         "https://picsum.photos/seed/SKU-1008-ribbed-tank-top-0/600/600",
         "https://picsum.photos/seed/SKU-1008-ribbed-tank-top-1/600/600"
       ],
-      "colors": ["ivory", "white", "blush"],
-      "sizes": ["M", "34", "XS", "30", "36"],
-      "tags": ["sale", "workwear", "best-seller"],
+      "colors": [
+        "ivory",
+        "white",
+        "blush"
+      ],
+      "sizes": [
+        "M",
+        "34",
+        "XS",
+        "30",
+        "36"
+      ],
+      "tags": [
+        "sale",
+        "workwear",
+        "best-seller"
+      ],
       "stock": 160,
       "rating": 3.9,
       "createdAt": "2025-06-13T00:00:00Z"
@@ -219,9 +307,21 @@
       "images": [
         "https://picsum.photos/seed/SKU-1009-tailored-blazer-0/600/600"
       ],
-      "colors": ["tan", "brown", "black"],
-      "sizes": ["9", "6", "10", "7"],
-      "tags": ["cozy", "new-arrival"],
+      "colors": [
+        "tan",
+        "brown",
+        "black"
+      ],
+      "sizes": [
+        "9",
+        "6",
+        "10",
+        "7"
+      ],
+      "tags": [
+        "cozy",
+        "new-arrival"
+      ],
       "stock": 61,
       "rating": 4.8,
       "createdAt": "2025-01-21T00:00:00Z"
@@ -238,9 +338,22 @@
       "images": [
         "https://picsum.photos/seed/SKU-1010-chiffon-blouse-0/600/600"
       ],
-      "colors": ["tan", "navy", "red"],
-      "sizes": ["36", "M", "34", "XL", "30"],
-      "tags": ["cozy", "workwear"],
+      "colors": [
+        "tan",
+        "navy",
+        "red"
+      ],
+      "sizes": [
+        "36",
+        "M",
+        "34",
+        "XL",
+        "30"
+      ],
+      "tags": [
+        "cozy",
+        "workwear"
+      ],
       "stock": 193,
       "rating": 4.6,
       "createdAt": "2025-02-21T00:00:00Z"
@@ -259,9 +372,16 @@
         "https://picsum.photos/seed/SKU-1011-slim-chino-pants-1/600/600",
         "https://picsum.photos/seed/SKU-1011-slim-chino-pants-2/600/600"
       ],
-      "colors": ["brown", "charcoal"],
-      "sizes": ["3T"],
-      "tags": ["best-seller"],
+      "colors": [
+        "brown",
+        "charcoal"
+      ],
+      "sizes": [
+        "3T"
+      ],
+      "tags": [
+        "best-seller"
+      ],
       "stock": 86,
       "rating": 3.5,
       "createdAt": "2025-05-22T00:00:00Z"
@@ -279,9 +399,16 @@
         "https://picsum.photos/seed/SKU-1012-oxford-shirt-0/600/600",
         "https://picsum.photos/seed/SKU-1012-oxford-shirt-1/600/600"
       ],
-      "colors": ["olive"],
-      "sizes": ["XS", "30"],
-      "tags": ["workwear"],
+      "colors": [
+        "olive"
+      ],
+      "sizes": [
+        "XS",
+        "30"
+      ],
+      "tags": [
+        "workwear"
+      ],
       "stock": 60,
       "rating": 3.9,
       "createdAt": "2025-05-05T00:00:00Z"

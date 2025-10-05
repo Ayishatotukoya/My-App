@@ -10,7 +10,7 @@ export const Route = createFileRoute("/")({
       throw redirect({ to: "/app" });
     } else {
       // not logged in → go to signin
-      throw redirect({ to: "/Auth/signin" });
+      throw redirect({ to: "/admin/admin" });
     }
   },
   component: () => null,
