@@ -1,5 +1,5 @@
 import AdminLayout from '@/components/admin/admin-layout'
-import CategoryPage from '@/components/admin/settingsPage'
+// import CategoryPage from '@/components/admin/settingsPage'
 import { createFileRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/admin/settings')({
@@ -9,7 +9,7 @@ export const Route = createFileRoute('/admin/settings')({
 function RouteComponent() {
   return(
    <AdminLayout>
-    <CategoryPage/>
+    {/* <CategoryPage/> */}
           <Outlet />
         </AdminLayout>
         )

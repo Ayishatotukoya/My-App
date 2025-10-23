@@ -49,24 +49,29 @@ export default function CategoriesPage() {
   if (error) return <p>Error: {error}</p>;
 
   // create
-  async function handleCreate(e: React.FormEvent) {
-    e.preventDefault();
+  async function handleCreate(e?: React.FormEvent) {
+    e?.preventDefault();
     const name = nameInput.trim();
     if (!name) return;
     try {
-      const payload = { name, slug: name.toLowerCase().replace(/\s+/g, "-") };
-      const res = await fetch(API, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("Create failed");
+      const payload = {
+        name,
+        slug: name.toLowerCase().replace(/\s+/g, "-"),
+      };
+
+      const {  error } = await supabase
+        .from("Category")
+        .insert([payload]); // <-- array required
+
+      if (error) throw new Error("Create failed");
+
       setNameInput("");
       await loadCategories();
     } catch (err: any) {
-      alert(err?.message || "Create error");
+      alert(err.message || "Create error");
     }
   }
+
 
   // start editing
   function startEdit(c: Category) {
@@ -87,12 +92,12 @@ export default function CategoriesPage() {
         name,
         slug: name.toLowerCase().replace(/\s+/g, "-"),
       };
-      const res = await fetch(`${API}/${editing.id}`, {
-        method: "PUT", // json-server supports PUT
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error("Update failed");
+      const{ error} = await supabase
+      .from("Category")
+      .update([payload])
+      .eq("id", editing.id);
+
+      if (error) throw new Error("Update failed");
       setEditing(null);
       setNameInput("");
       await loadCategories();
@@ -105,8 +110,12 @@ export default function CategoriesPage() {
   async function handleDelete(id: number) {
     if (!confirm("Delete this category?")) return;
     try {
-      const res = await fetch(`${API}/${id}`, { method: "DELETE" });
-      if (!res.ok) throw new Error("Delete failed");
+      const { error} = await supabase
+       .from("categories")
+      .delete()
+      .eq("id", id);
+      
+      if (error) throw new Error("Delete failed");
       await loadCategories();
     } catch (err: any) {
       alert(err?.message || "Delete error");

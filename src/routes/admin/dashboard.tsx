@@ -1,6 +1,6 @@
 
 import AdminLayout from '@/components/admin/admin-layout'
-import DashboardPage from '@/components/admin/dashboard'
+// import DashboardPage from '@/components/admin/dashboard'
 import { createFileRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/admin/dashboard')({
@@ -10,7 +10,7 @@ export const Route = createFileRoute('/admin/dashboard')({
 function RouteComponent() {
   return(
   <AdminLayout>
-    <DashboardPage />
+    {/* <DashboardPage /> */}
          <Outlet />
        </AdminLayout>
        )
