@@ -91,7 +91,7 @@ export default function AdminLayout({
 
   // Example nav items — feel free to move to a const above or import from a file
   const nav = [
-    { label: "Dashboard", to: "/admin/admin", icon: LayoutDashboard },
+    { label: "Dashboard", to: "/admin/dashboard", icon: LayoutDashboard },
     { label: "Products", to: "/admin/product", icon: ShoppingCart },
     { label: "Orders", to: "/admin/orders", icon: List },
     { label: "Settings", to: "/admin/settings", icon: Settings },
@@ -205,8 +205,7 @@ export default function AdminLayout({
               </Link>
               <button
                 onClick={() => {
-                  // put your logout logic here
-                  console.log("logout");
+                
                 }}
                 className="flex items-center gap-2 px-2 py-2 text-sm rounded hover:bg-slate-50 text-left"
               >

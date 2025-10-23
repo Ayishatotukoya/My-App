@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { supabase } from "@/lib/supabaseClient";
 
 type Category = {
   id: number;
@@ -10,7 +11,7 @@ type Category = {
   parentId?: number | null;
 };
 
-const API = "http://localhost:4000/categories";
+
 
 export default function CategoriesPage() {
   const [categories, setCategories] = useState<Category[] | null>(null);
@@ -26,9 +27,11 @@ export default function CategoriesPage() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(API);
-      if (!res.ok) throw new Error(`Failed to fetch (${res.status})`);
-      const data: Category[] = await res.json();
+      const { data, error } = await supabase
+      .from("Category")
+      .select("*"); // selects all categories
+
+      if (error) throw error;
       setCategories(data);
     } catch (err: any) {
       setError(err.message || "Unknown error");
@@ -41,6 +44,9 @@ export default function CategoriesPage() {
   useEffect(() => {
     loadCategories();
   }, []);
+
+  if (loading) return <p>Loading categories...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   // create
   async function handleCreate(e: React.FormEvent) {
